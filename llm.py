@@ -324,3 +324,4 @@ class GPT(BaseLLMAPI):
                 choices[i]["logprobs"] = None
                 choices[i]["tokens"] = None
         return choices
+    
