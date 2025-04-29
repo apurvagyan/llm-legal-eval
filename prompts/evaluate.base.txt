@@ -1,0 +1,47 @@
+Evaluate the system summary based on the provided reference summary. Determine whether each of the following types of information is present in the system summary:
+
+1. **Plaintiff**: The person or group initiating legal action.
+2. **Defendant**: The person or group against whom legal action is filed.
+3. **Initial filing date**: The official date the lawsuit was filed by the plaintiff.
+4. **Court's full name**: The complete name of the court handling the case.
+5. **Issue or statutory basis for the case**: The specific legal basis or issue prompting the lawsuit.
+6. **Holding**: The court's decision on the legal issue (or indicate "N/A" if settled).
+7. **Remedial outcome**: The relief or result granted to the plaintiff by the court or via settlement.
+8. **Judge's Name**: The name(s) of the judge(s) presiding over the case.
+9. **Date of holding or outcome**: The date when the judgment was issued or settlement finalized.
+
+For each category, assign one of the following values:
+
+1. **Included (complete)**: Present in both summaries with all details matching.
+2. **Included (contradiction)**: Present in both summaries but details contradict each other.
+3. **Included (extra)**: Present in the system summary but not in the reference summary, or present in both summaries but with additional details in the system summary.
+4. **Included (incomplete)**: Present in both summaries but lacking some details from the reference summary.
+5. **Not included**: Not present in the system summary.
+
+Provide your answer as a JSON-formatted list containing these nine elements, each with a numeric value from 1 to 5. For example:
+
+```json
+{
+  "Plaintiff": 1,
+  "Defendant": 1,
+  "Initial filing date": 2,
+  "Court's full name": 5,
+  "Issue or statutory basis for the case": 4,
+  "Holding": 3,
+  "Remedial outcome": 1,
+  "Judge's Name": 5,
+  "Date of holding or outcome": 1
+}
+```
+
+# Reference Summary:
+"""
+{HUMAN_SUMMARY}
+"""
+
+# System Summary:
+"""
+{SYSTEM_SUMMARY}
+"""
+
+
