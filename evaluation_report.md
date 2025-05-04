@@ -1,19 +1,19 @@
 # Legal Summary Evaluation Report
 Total examples evaluated: 169
-Overall accuracy: 0.5924
+Overall accuracy: 0.7456
 
 ## Accuracy by Attribute
 | Attribute | Accuracy |
 | --- | --- |
-| plaintiff | 0.8757 |
-| defendant | 0.9172 |
-| filing_date | 0.7337 |
-| judge | 0.7396 |
-| outcome_date | 0.5621 |
-| court_name | 0.4379 |
-| statutory | 0.4379 |
-| outcome | 0.4675 |
-| holding | 0.1598 |
+| plaintiff | 0.8521 |
+| defendant | 0.9231 |
+| filing_date | 0.7751 |
+| court_name | 0.9053 |
+| statutory | 0.8166 |
+| holding | 0.7811 |
+| outcome | 0.5325 |
+| judge | 0.5325 |
+| outcome_date | 0.5917 |
 
 ## Label Distribution
 
@@ -96,3 +96,78 @@ Overall accuracy: 0.5924
 ## Confusion Matrices
 
 ### plaintiff
+| Human ↓ / LLM → | included_complete | included_contradiction | included_extra | included_incomplete |
+| --- | --- | --- | --- | --- |
+| included_complete | 144 | 6 | 0 | 0 | |
+| included_contradiction | 2 | 0 | 0 | 0 | |
+| included_extra | 2 | 0 | 0 | 0 | |
+| included_incomplete | 15 | 0 | 0 | 0 | |
+
+### defendant
+| Human ↓ / LLM → | included_complete | included_contradiction | included_extra | included_incomplete |
+| --- | --- | --- | --- | --- |
+| included_complete | 156 | 4 | 0 | 0 | |
+| included_contradiction | 1 | 0 | 0 | 0 | |
+| included_extra | 3 | 1 | 0 | 0 | |
+| included_incomplete | 4 | 0 | 0 | 0 | |
+
+### filing_date
+| Human ↓ / LLM → | included_complete | included_contradiction | included_incomplete | not_included |
+| --- | --- | --- | --- | --- |
+| included_complete | 116 | 31 | 0 | 0 | |
+| included_contradiction | 1 | 11 | 0 | 0 | |
+| included_incomplete | 1 | 0 | 0 | 0 | |
+| not_included | 4 | 1 | 0 | 4 | |
+
+### court_name
+| Human ↓ / LLM → | included_complete | included_contradiction | included_extra | included_incomplete | not_included |
+| --- | --- | --- | --- | --- | --- |
+| included_complete | 152 | 2 | 0 | 0 | 1 | |
+| included_contradiction | 0 | 0 | 0 | 0 | 0 | |
+| included_extra | 9 | 1 | 0 | 0 | 1 | |
+| included_incomplete | 1 | 1 | 0 | 0 | 0 | |
+| not_included | 0 | 0 | 0 | 0 | 1 | |
+
+### statutory
+| Human ↓ / LLM → | included_complete | included_contradiction | included_extra | included_incomplete | not_included |
+| --- | --- | --- | --- | --- | --- |
+| included_complete | 137 | 7 | 0 | 0 | 0 | |
+| included_contradiction | 8 | 1 | 0 | 0 | 0 | |
+| included_extra | 2 | 0 | 0 | 0 | 0 | |
+| included_incomplete | 12 | 0 | 0 | 0 | 0 | |
+| not_included | 2 | 0 | 0 | 0 | 0 | |
+
+### holding
+| Human ↓ / LLM → | included_complete | included_contradiction | included_incomplete | not_included |
+| --- | --- | --- | --- | --- |
+| included_complete | 126 | 6 | 3 | 11 | |
+| included_contradiction | 7 | 1 | 0 | 1 | |
+| included_incomplete | 4 | 0 | 0 | 0 | |
+| not_included | 5 | 0 | 0 | 5 | |
+
+### outcome
+| Human ↓ / LLM → | included_complete | included_contradiction | included_extra | included_incomplete | not_included |
+| --- | --- | --- | --- | --- | --- |
+| included_complete | 66 | 2 | 0 | 10 | 4 | |
+| included_contradiction | 0 | 0 | 0 | 1 | 1 | |
+| included_extra | 4 | 0 | 0 | 2 | 0 | |
+| included_incomplete | 18 | 0 | 0 | 12 | 0 | |
+| not_included | 19 | 0 | 0 | 18 | 12 | |
+
+### judge
+| Human ↓ / LLM → | included_complete | included_contradiction | included_extra | included_incomplete | not_included |
+| --- | --- | --- | --- | --- | --- |
+| included_complete | 81 | 2 | 0 | 0 | 0 | |
+| included_contradiction | 2 | 1 | 0 | 0 | 0 | |
+| included_extra | 60 | 0 | 0 | 0 | 0 | |
+| included_incomplete | 14 | 1 | 0 | 0 | 0 | |
+| not_included | 0 | 0 | 0 | 0 | 8 | |
+
+### outcome_date
+| Human ↓ / LLM → | included_complete | included_contradiction | included_extra | included_incomplete | not_included |
+| --- | --- | --- | --- | --- | --- |
+| included_complete | 82 | 23 | 0 | 0 | 0 | |
+| included_contradiction | 21 | 11 | 0 | 1 | 5 | |
+| included_extra | 5 | 2 | 0 | 0 | 0 | |
+| included_incomplete | 4 | 0 | 0 | 0 | 1 | |
+| not_included | 5 | 2 | 0 | 0 | 7 | |
