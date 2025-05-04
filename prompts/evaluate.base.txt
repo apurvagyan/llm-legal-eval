@@ -36,12 +36,12 @@ Provide your answer as a JSON-formatted list containing these nine elements, eac
 
 # Reference Summary:
 """
-{HUMAN}
+{HUMAN_SUMMARY}
 """
 
 # System Summary:
 """
-{SYSTEM}
+{SYSTEM_SUMMARY}
 """
 
 
