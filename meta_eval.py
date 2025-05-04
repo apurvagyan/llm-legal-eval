@@ -17,10 +17,12 @@ def list_gemini_models():
         for method in model.supported_generation_methods:
             print(f"- Supports: {method}")
 
-PROMPT = "prompts/evaluate.base.txt"
+PROMPT = "prompts/evaluate.one_shot.txt"
 
-MODEL = {"provider": "gemini", "model_name": "gemini-2.0-flash"}  # "gemini" or "chatgpt"
-# MODEL = {"provider": "chatgpt", "model_name": "gpt-4o-mini"}
+print("USING PROMPT: " + PROMPT)
+
+# MODEL = {"provider": "gemini", "model_name": "gemini-2.0-flash"}  # "gemini" or "chatgpt"
+MODEL = {"provider": "chatgpt", "model_name": "gpt-4o-mini"}
 DELAY = 5
 
 # Constants
