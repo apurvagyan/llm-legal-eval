@@ -17,10 +17,11 @@ def list_gemini_models():
         for method in model.supported_generation_methods:
             print(f"- Supports: {method}")
 
+# Define prompt
 PROMPT = "prompts/evaluate.one_shot.txt"
-
 print("USING PROMPT: " + PROMPT)
 
+# Define our model provider
 # MODEL = {"provider": "gemini", "model_name": "gemini-2.0-flash"}  # "gemini" or "chatgpt"
 MODEL = {"provider": "chatgpt", "model_name": "gpt-4o-mini"}
 DELAY = 5
@@ -96,7 +97,7 @@ class MetaEvaluator:
         for i, example in enumerate(self.data):
             print(f"Evaluating example {i+1}/{len(self.data)}")
             result = self.evaluate_example(example, llm_model)
-            time.sleep(DELAY) # so I don't hit the quota lol
+            time.sleep(DELAY) # so we don't hit the quota lol
             results.append(result)
 
         self.evaluation_results = results
@@ -144,7 +145,6 @@ class MetaEvaluator:
 
         # Extract JSON from response
         try:
-            # Find the JSON part (usually between ```json and ```)
             json_start = response_text.find('```json')
             if json_start != -1:
                 json_text = response_text[json_start + 7:]
@@ -401,7 +401,6 @@ class MetaEvaluator:
 
         print(f"Report saved to {save_path}")
 
-# Main execution when run as script
 if __name__ == "__main__":
     if MODEL["provider"] == "chatgpt":
 
@@ -424,7 +423,7 @@ if __name__ == "__main__":
         if not GOOGLE_API_KEY:
             raise ValueError("GOOGLE_API_KEY environment variable not set.")
         genai.configure(api_key=GOOGLE_API_KEY)
-        gemini_model = genai.GenerativeModel(MODEL["model_name"])  # e.g., "gemini-pro"
+        gemini_model = genai.GenerativeModel(MODEL["model_name"])
 
         # Define a wrapper to match the expected interface
         class GeminiWrapper:
